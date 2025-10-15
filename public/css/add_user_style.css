@@ -1,0 +1,95 @@
+
+.container {
+    width: 800px;
+    background: #ffffffef;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    max-height: 80vh; /* ให้มีความสูงไม่เกิน 80% ของหน้าจอ */
+    overflow-y: auto; /* เพิ่มแถบเลื่อนเมื่อเลยจอ */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+}
+.form-label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+a{
+    text-decoration: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    background: #01a309;
+    color: white;
+    border: none;
+    transition: 0.3s;
+    text-align: center;
+    cursor: pointer;
+
+}
+a:hover {
+    background: #005c06;
+}
+.form-control,
+.form-select {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.alert {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

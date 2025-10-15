@@ -1,0 +1,28 @@
+/* ปรับขนาดตัวเลื่อน */
+::-webkit-scrollbar {
+    width: 10px; /* ความกว้างของตัวเลื่อนแนวตั้ง */
+    height: 10px; /* ความสูงของตัวเลื่อนแนวนอน */
+}
+
+/* ปรับแต่งสีของตัวเลื่อน */
+::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* สีของตัวเลื่อน */
+    border-radius: 10px; /* ขอบมนให้ตัวเลื่อน */
+    border: 3px solid #f4f4f4; /* ขอบขาวรอบตัวเลื่อน */
+}
+
+/* เมื่อเลื่อนเมาส์ไปบนตัวเลื่อน */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3; /* เปลี่ยนสีเมื่อโฟกัส */
+}
+
+/* ปรับแต่งพื้นหลังของ scrollbar */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* พื้นหลังตัวเลื่อน */
+    border-radius: 10px; /* ขอบมนให้พื้นหลัง */
+}
+
+/* ปรับแต่งพื้นที่ที่เลื่อน */
+::-webkit-scrollbar-track:hover {
+    background-color: #e0e0e0; /* พื้นหลังเข้มขึ้นเมื่อเมาส์อยู่บนตัวเลื่อน */
+}

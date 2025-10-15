@@ -1,0 +1,558 @@
+.dropdown-menu-admin {
+    display: none;
+    position: absolute;
+    background-color: #567086;
+    color: white;
+    padding: 7px;
+    z-index: 1000;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item-admin {
+    display: block;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    background-color: #ffffff00;
+    border: none;
+    width: 100%;
+    transition:ease 0.7s;
+}
+
+.dropdown-item-admin:hover {
+    background-color: #45576a;
+    color: #f5a623;
+}
+
+#map {
+    width: 100%;
+    height: 450px;
+    /* หรือ 100vh, 70vh แล้วแต่ต้องการ */
+    border-radius: 8px;
+}
+.xweh{
+    height: 600px;
+    padding: 10px;
+    padding-bottom: 100px;
+    margin-bottom: 10px;
+    height: auto !important;
+    max-height: fit-content !important;
+    overflow: visible;
+    box-sizing: border-box;
+}
+.heip{
+    height: 120px;
+}
+.contrllerbtn {
+    display: flex;
+    flex-direction: row;
+    /* เรียงแนวนอน */
+    gap: 20px;
+    /* ระยะห่างระหว่างปุ่ม */
+    align-items: center;
+    flex-wrap: wrap;
+    /* ให้ปุ่มตัดบรรทัดถ้าพื้นที่ไม่พอ */
+}
+
+.mark {
+    background-color: #79797900;
+}
+
+/* CSS */
+.btn-addmark {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    transition: 0.5s;
+}
+
+.btn-addmark1 {
+    background: #981200;
+    border-radius: 999px;
+    box-shadow: #981200 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    transition: 0.5s;
+}
+
+.btn-addmark2 {
+    background: hsl(90, 83%, 65%);
+    border-radius: 999px;
+    box-shadow: hsl(90, 83%, 65%);
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    transition: 0.5s;
+}
+
+.btn-addmark:hover,
+.btn-addmark1:hover,
+.btn-addmark2:hover {
+    color: rgb(0, 0, 0);
+}
+
+.btnshow {
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+.btnshow:hover,
+.btnshow:focus {
+    background-color: #16437E;
+    color: #ffffff;
+}
+
+.btnshow:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+}
+
+.btnshow:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+}
+
+.btnshow1 {
+    align-items: center;
+    background-color: #368e00;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+.btnshow1:hover,
+.btnshow1:focus {
+    background-color: #306f06;
+    color: #ffffff;
+}
+
+.btnshow1:active {
+    background: #213b09;
+    color: rgb(255, 255, 255, .7);
+}
+
+.btnshow1:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+}
+
+/* ตารางหลัก */
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+/* ส่วนหัว */
+.table-custom thead {
+    background-color: #343a40;
+    color: #fff;
+}
+
+/* ขอบ */
+.table-custom th,
+.table-custom td {
+    border: 1px solid #dee2e6;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+/* สลับสีแถว */
+.table-custom tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+/* ปุ่ม */
+.btn {
+    padding: 4px 10px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-sm {
+    padding: 3px 8px;
+    font-size: 12px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.centertext {
+    text-align: center;
+}
+
+.status-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status.finish {
+    background-color: #28a745;
+    color: white;
+}
+
+.status.Pending {
+    background-color: #ffc107;
+    color: black;
+}
+
+.wrap-text {
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 250px;
+}
+
+.pagination-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    background-color: #f1f9ff;
+}
+
+.weh1 {
+    min-height: 610px;
+}
+
+.tm-block {
+    min-height: unset !important;
+    /* หรือกำหนดตามที่ต้องการ */
+}
+
+.tm-blockx {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.weh {
+    padding: 20px;
+    margin-bottom: 20px;
+    height: auto !important;
+    max-height: fit-content !important;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.tm-block-col {
+    height: auto !important;
+    overflow: visible;
+    display: block;
+}
+
+.btntop {
+    background-color: #00000000;
+    border: none;
+}
+
+.active {
+    transition: 0.8s;
+}
+
+#mapSection {
+    transition: 1s;
+}
+
+#infoSection {
+    transition: 1s;
+}
+
+.btntop:hover {
+    color: #f5a623;
+    background-color: transparent;
+
+}
+
+.btntop {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.fade-move {
+    transition: all 1s ease;
+    opacity: 1;
+}
+
+.fade-leave {
+    opacity: 0;
+    transform: translateY(37px);
+}
+
+.fade-enter {
+    opacity: 0;
+    transform: translateY(-37px);
+}
+
+.dropdown-item-admin i {
+    margin-right: 2px;
+    /* ปรับค่าตามความเหมาะสม */
+    width: 20px;
+    /* บังคับให้ icon มีความกว้างคงที่ */
+    text-align: left;
+    /* จัดให้ icon อยู่ตรงกลาง */
+}
+
+.navbar-nav {
+    gap: 10px;
+}
+h2 {
+        color: #2c3e50;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    .colorw{
+        color:rgb(255, 255, 255);
+    }
+    label.form-label {
+        font-weight: 600;
+        color:rgb(255, 255, 255);
+    }
+    .input-group {
+        display: flex;
+        flex-direction: column; 
+        gap: 12px; 
+    }
+    .input-group .remove-btn{
+        background-color: #dc3545;
+        color: #fff;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    }
+
+    #resultContainer input.form-control,
+    #personContainer input.form-control,
+    #targetContainer input.form-control,
+    #activityContainer input.form-control,
+    #benefitContainer input.form-control{
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        padding: 10px 14px;
+        font-size: 16px;
+        background-color: rgb(255,255,255);
+        color: rgb(0, 0, 0);
+        transition:0.7s;
+    }
+
+
+    input.form-control {
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        padding: 10px 14px;
+        font-size: 16px;
+        background-color: rgb(255,255,255);
+        color: rgb(0, 0, 0);
+        transition:0.7s;
+    }
+
+    input.form-control:focus {
+        color: rgb(45, 45, 45);
+        background-color: #567086;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.93);
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+        padding: 10px 25px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+
+    .sent-activity #addPersonBtn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #fff;
+        background: #3f51b5;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background .3s ease;
+    }
+
+    .sent-activity #addPersonBtn:hover {
+        background: #2c387e;
+    }
+
+
+.sent-activity .addPersonBtn:hover {
+    background: #2c387e;
+}
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        margin-left: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+    .swal2-popup {
+        font-size: 1.1rem !important;
+        font-family: 'Sarabun', sans-serif;
+    }

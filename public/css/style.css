@@ -1,0 +1,241 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+}
+
+h2 {
+    color: #333;
+}
+
+button, a {
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* ปุ่ม Primary */
+.btn-primary {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary:active {
+    background-color: #004085;
+    border-color: #003768;
+}
+
+/* ปุ่ม Success */
+.btn-success {
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-success:active {
+    background-color: #1c7430;
+    border-color: #18652a;
+}
+
+/* เพิ่มเอฟเฟกต์กด */
+button:active {
+    transform: scale(0.98);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* เพิ่มเงาให้ดูนูนขึ้น */
+.btn {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contentx {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* ใช้พื้นที่เต็มหน้าจอ */
+    position: relative;
+}
+
+/* แก้ไขการตั้งค่าของ map ให้รองรับหน้าจอที่แตกต่างกัน */
+#map {
+    width: calc(100vw - 50px);
+    height: calc(100vh - 200px);
+    max-width: 900px;
+    max-height: 500px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.function-button {
+    width: 900px;
+    height: auto;
+    display: flex;
+    gap: 45px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* ให้พับขึ้นเมื่อไม่มีที่ว่าง */
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #16a06b;
+    margin-top: 10px;
+}
+
+/* เมื่อหน้าจอ <= 992px ให้เปลี่ยนเป็น Grid 3x3 */
+@media (max-width: 992px) {
+    .function-button {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+        gap: 10px;
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+    }
+.add-marker-btn{
+    border-radius: 50%;
+}
+    .function-button a,
+    .function-button button {
+        width: 50%;
+        border-radius: 50%; /* ให้ปุ่มขยายเต็มคอลัมน์ */
+        text-align: center;
+    }
+}
+
+
+.function-button.black {
+    background-color: #c54838;
+}
+
+.function-button.before {
+    background-color: #16a06b;
+}
+
+.add-marker-btn, .list-marker-btn, .logout-form {
+    width: 60px;
+    height: 60px;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: rgb(2, 2, 2);
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 50%;
+    gap: 10px;
+    transition: background 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.add-marker-btn:hover, .list-marker-btn:hover {
+    background-color: rgb(255, 232, 156); /* เปลี่ยนสีเมื่อ hover */
+}
+
+.add-marker-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.logout-btn {
+    background: none;
+    color: black;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .contentx {
+        margin-left: 50px;
+    }
+    .function-button {
+        width: 500px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    
+    .function-button {
+        width: 400px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contentx {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .function-button {
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .contentx {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) { /* ปรับค่า max-width ตามขนาดมือถือที่ต้องการ */
+    .function-button {
+        width: 100%; /* ปรับให้เต็มจอ */
+        height: auto; /* ปรับให้ขนาดตามเนื้อหา */
+        flex-wrap: wrap; /* ให้ปุ่มขึ้นแถวใหม่เมื่อพื้นที่ไม่พอ */
+        gap: 10px; /* ลดระยะห่างระหว่างปุ่ม */
+        padding: 10px;
+    }
+
+    .function-button a,
+    .function-button button {
+        flex: 1 1 10%; /* กำหนดให้แต่ละปุ่มมีขนาด 45% ของพื้นที่ */
+        text-align: center; /* จัดให้ข้อความอยู่กึ่งกลาง */
+    }
+}
+
+@media (max-width: 576px) {
+    
+    .function-button {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+}

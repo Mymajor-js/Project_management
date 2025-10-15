@@ -1,0 +1,254 @@
+/* ตั้งค่าหน้าจอให้เต็มและพื้นหลัง */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ใช้ min-height แทน height ป้องกันฟอร์มล้น */
+    margin: 0;
+    background-color: #f4f4f4;
+    position: relative;
+    padding: 20px;
+}
+
+/* พื้นหลังแบบเต็มจอ */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/tex.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* กล่องฟอร์ม */
+.content {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh; /* ป้องกันการล้นจอ */
+    box-sizing: border-box;
+    overflow-y: auto; /* เลื่อนลงได้ถ้าข้อมูลเยอะ */
+}
+
+
+/* หัวข้อ */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* จัดฟอร์มแบบ Grid */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ช่องที่ต้องการขยาย 2 คอลัมน์ */
+.full-width {
+    grid-column: span 2;
+}
+
+/* ป้ายกำกับ */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* ช่องกรอกข้อมูล */
+.input, .textarea ,select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+select{
+    width: 100%;
+}
+/* ช่อง textarea */
+.textarea {
+    height: 80px;
+    resize: none;
+}
+/* ปุ่มบันทึกอยู่ตรงกลาง */
+button {
+    grid-column: span 2;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.btncolor{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    background-color: #ffffff;
+    color: black;
+    transition: 0.6s;
+}
+.btncolor:hover{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    background-color: #0056b3;
+    color: rgb(255, 255, 255);
+}
+/* ลิงก์ย้อนกลับ */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+/* จัดกลุ่มระยะเวลาโครงการ */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.date-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+    gap: 20px; /* ระยะห่างระหว่างช่อง */
+    width: 100%;
+    align-items: center; /* จัดให้ตรงกลางแนวตั้ง */
+}
+#activityContainer, #personContainer, #targetContainer, #resultContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* จัด input group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.mybtn{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    color: #279705;
+    text-align: center;
+    align-items: center;
+    transition: 1s;
+}
+.mybtn:hover{
+    color: #ffffff;
+    background-color: #04b401;
+}
+.marginx {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* ปุ่มลบ */
+.remove-btn {
+    width: 100px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: darkred;
+    color: #ffffff;
+}
+.date-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ปรับแต่ง label และ input */
+.date-item label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.date-item .input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Responsive: ปรับให้เรียงแนวตั้งเมื่อหน้าจอเล็ก */
+@media (max-width: 600px) {
+    .date-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Responsive: สำหรับหน้าจอเล็ก */
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+    .full-width, textarea, button {
+        grid-column: span 1;
+    }
+}
+.content table {
+    position: relative;
+    background-color: #ffffff;
+    width: 100%;  /* ให้ตารางเต็ม content */
+    border-collapse: collapse;  /* รวมเส้นขอบให้ดูเรียบ */
+}
+.content th.cx {
+    width: 40%; /* ปรับให้ "ผลลัพธ์หลัก" กว้างกว่า */
+}
+.content th {
+    width: 10%; /* ขนาดช่องอื่น */
+}
+.content th, .content td {
+    border: 1px solid black;  /* เส้นขอบตาราง */
+    padding: 8px;  /* ระยะห่างขอบเซลล์ */
+    text-align: center;  /* จัดข้อความให้อยู่กลาง */
+    vertical-align: middle;  /* จัดให้อยู่ตรงกลางแนวตั้ง */
+}
+
+.input_intable {
+    width: 100px;
+    text-align: center;
+    font-size: 16px; /* ปรับขนาดตัวอักษรให้พอดี */
+}
+.text_intable{
+    width: 100%; 
+    resize: vertical; 
+    min-height: 50px; 
+    max-height: 200px; 
+    padding: 8px;
+    box-sizing: border-box;
+}

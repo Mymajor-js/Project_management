@@ -1,0 +1,345 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/tex.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.904);
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* กำหนดความกว้างสูงสุดให้เป็น 100% */
+    box-sizing: border-box; /* ใช้เพื่อให้ padding ไม่ขยายขนาดที่แท้จริงของ container */
+    overflow: hidden; /* ซ่อนส่วนที่เกินขอบ */
+    position: fixed; /* ทำให้ container อยู่คงที่ */
+    left: 50%; /* จัดตำแหน่งแนวนอนตรงกลาง */
+    overflow-y: auto;
+    bottom: 10px; /* ห่างจากด้านล่าง 10px */
+    top:20px;
+    transform: translateX(-50%); /* จัดให้ container อยู่ตรงกลางแนวนอน */
+}
+
+.form-container input[type="file"] {
+    padding: 3px;
+}
+
+.single-line {
+    overflow: visible; /* แสดงข้อความทั้งหมด */
+    margin-left: 30px;
+}
+
+.rowclass {
+    margin-left:30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 5px; 
+    align-items: center;
+    width: 100%;
+}
+
+.contenta {
+    margin: 0 auto;
+    padding: 5px;
+    width: 100%;
+    overflow-y: auto; 
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contenta::-webkit-scrollbar {
+    display: none;
+}
+
+.col-md-2 {
+    flex: 0 0 90%;
+    margin-bottom: 20px;
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+    position: relative;
+}
+
+.delete-btn {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none; /* เริ่มต้นให้ซ่อน */
+}
+
+.delete-btn {
+    position: absolute;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+    text-decoration: 0.4s;
+}
+
+.col-md-2:hover .delete-btn {
+    display: block;
+}
+
+.delete-btn:hover {
+    border-radius: 50%;
+    background-color: rgba(255, 35, 35, 0.8);
+}
+
+.col-md-2.selected {
+    transition: 1s;
+    filter: brightness(30%);
+}
+
+/* ทำให้ checkbox ดูดีขึ้น */
+.select-img {
+    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+.image.dark {
+    filter: brightness(80%); /* ทำให้รูปมืดลง 30% */
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+img.img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* ให้รูปแสดงผลพอดีในกรอบโดยไม่ยืด */
+    border-radius: 8px; /* ใส่ขอบมนๆ ให้กับรูป */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับรูป */
+}
+.info-card {
+    background: #f8f9fa; /* สีพื้นหลังอ่อน */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.info-card h5 {
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.info-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table thead {
+    background-color: #789901;
+    color: white;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.input_intable, .text_intable {
+    width: 100%;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+/* สไตล์ของ modal */
+.modal {
+    display: none; /* ซ่อน modal เมื่อไม่ได้เปิด */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* สไตล์ของเนื้อหาใน modal */
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* ปุ่มปิด modal */
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.tablx{
+    width: 100%; /* ให้กินพื้นที่เต็มหน้าจอ */
+    overflow-x: auto; /* ทำให้เลื่อนในแนวนอน */
+}
+@media (max-width:  1920px){
+    .form-container{
+        width: 999px;
+    }
+}
+/* Media Queries for responsive layout */
+@media (max-width: 1200px) {
+    .col-md-2 {
+        flex: 0 0 22%; /* กำหนดขนาดคอลัมน์ให้มี 4 คอลัมน์ในหน้าจอที่มีความกว้างน้อยกว่า 1200px */
+    }
+    .rowclass {
+        grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ในหน้าจอขนาดกลาง */
+    }
+    
+}
+
+@media (max-width: 992px) {
+    .col-md-2 {
+        flex: 0 0 30%; /* กำหนดขนาดคอลัมน์ให้มี 3 คอลัมน์ในหน้าจอที่มีความกว้างน้อยกว่า 992px */
+    }
+    .rowclass {
+        grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ในหน้าจอขนาดเล็ก */
+    }
+}
+
+@media (max-width: 768px) {
+    .col-md-2 {
+        flex: 0 0 48%; /* ให้แต่ละรูปใช้พื้นที่ 48% ในหน้าจอขนาดเล็ก */
+    }
+
+    .contenta {
+        width: 100%; /* ใช้ความกว้างเต็มในหน้าจอขนาดเล็ก */
+    }
+    .rowclass {
+        grid-template-columns: 1fr; /* 1 คอลัมน์ในหน้าจอขนาดเล็กสุด */
+    }
+}
+
+@media (max-width: 480px) {
+    .col-md-2 {
+        flex: 0 0 98%; /* ให้แต่ละรูปใช้พื้นที่ 98% ในหน้าจอขนาดเล็กที่สุด */
+    }
+
+    .contenta {
+        width: 100%; /* ใช้ความกว้างเต็มในหน้าจอขนาดเล็ก */
+        padding: 10px; /* ลด padding บนหน้าจอเล็ก */
+    }
+}

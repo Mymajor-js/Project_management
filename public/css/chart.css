@@ -1,0 +1,101 @@
+body{
+    width: 100%;
+    background-color: #bbdefb !important;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fixed-header {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+}
+
+.search-form {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.graph-container {
+    display: flex;
+    flex-wrap: wrap; /* ถ้าพื้นที่ไม่พอ ให้ขึ้นบรรทัดใหม่ */
+    max-width: 100%; /* จำกัดไม่ให้เกินขนาดจอ */
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    margin-top: 30px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, 
+                rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 40px;
+    border-radius: 10px;
+    gap: 20px; /* เพิ่มระยะห่างระหว่างองค์ประกอบ */
+}
+
+/* ปรับขนาดของ .conx ให้ยืดหยุ่น */
+.conx {
+    flex: 1; /* ให้ขยายตัวเอง */
+    min-width: 300px; /* ไม่ให้เล็กเกินไป */
+    max-width: 500px; /* จำกัดขนาดไม่ให้ใหญ่เกินไป */
+}
+
+/* ถ้าหน้าจอเล็กกว่า 800px ให้เรียงเป็น column */
+@media (max-width: 800px) {
+    .graph-container {
+        flex-direction: column;
+        align-items: center; /* จัดให้อยู่ตรงกลาง */
+    }
+}
+
+
+.fixed-button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.fixed-button .btn {
+    margin-right: 10px;
+}
+
+.alert {
+    background-color: #e3f2fd;
+    border-color: #bbdefb;
+    color: #1e88e5;
+}
+
+.login-alert {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.login-alert h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #d32f2f;
+}
+
+.login-alert .btn {
+    font-size: 1.1rem;
+}

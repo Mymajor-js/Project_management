@@ -1,0 +1,370 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/tex.png');
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed; 
+    z-index: -1;
+}
+.card-img-top {
+    width: 100%;
+    height: 150px; /* ปรับให้ขนาดพอดี */
+    object-fit: cover; /* ป้องกันภาพผิดสัดส่วน */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.color-red{
+    color: #d3848c;
+}
+.container {
+    background: rgba(255, 255, 255, 0.473);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 800px; 
+    max-height: 60vh; /* ไม่ให้ container สูงเกิน 80% ของหน้าจอ */
+    overflow-y: auto; /* ให้สามารถเลื่อนลงเมื่อเนื้อหาเกิน */
+    text-align: center;
+    position: relative;
+}
+
+
+
+
+.fixed-header {
+    position: fixed; 
+    top: 40px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1000; 
+    background-color: rgba(255, 255, 255, 0.658); 
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-button {
+    position: fixed; 
+    top: 90px; 
+    right: 20px;
+    z-index: 1000;
+    transition: 1s;
+}
+.card {
+    border-radius: 12px; /* ขอบมน */
+    overflow: hidden; /* กันภาพเกินขอบ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูนุ่ม */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* ขยับขึ้นเมื่อ hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    width: 100%; /* ทำให้ภาพขนาดเต็มการ์ด */
+    height: 150px; /* กำหนดความสูงเท่ากัน */
+    object-fit: cover; /* ป้องกันภาพบีบหรือยืด */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    color: #007bff; /* ใช้สีน้ำเงินของ Bootstrap */
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #1c1c1c;
+    margin-bottom: 8px;
+}
+
+hr {
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.form-select {
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 14px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+}
+.text-right {
+    position: relative;
+    left: 0; /* ลบ margin และปรับตำแหน่งให้ไปทางซ้ายสุด */
+    text-align: right; /* ถ้าเป็นข้อความให้จัดเรียงทางซ้าย */
+}
+.form-select:hover {
+    background-color: #e9ecef;
+}
+
+.form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+.gap{
+    display: flex;
+    flex-wrap: nowrap;          /* ไม่ให้ขึ้นบรรทัดใหม่ */
+    gap: 5px;                    /* ระยะห่างระหว่างปุ่ม */
+    align-items: center;
+    justify-content: center;
+}
+.centertext {
+    text-align: center;        /* จัดกลางแนวนอน */
+    
+    vertical-align: middle;    /* จัดกลางแนวตั้ง */
+}
+.status-box.wrap-text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 350px;
+    text-align: left;
+    margin: 10px 0;
+}
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 7px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.finish {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.Pending {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.status i {
+    font-size: 18px;
+}
+.search-form {
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom:20px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-form:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    background-color: #f1f9ff;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.search-button:active {
+    background-color: #004085;
+    transform: scale(1);
+}
+.graphx{
+    max-width: 450px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+#graphView{
+}
+.search-input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-pagination {
+    display: flex;
+    gap: 8px;
+}
+
+.custom-pagination a,
+.custom-pagination span {
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-pagination a {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.custom-pagination a:hover {
+    background-color: #0056b3;
+}
+
+.custom-pagination .active {
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #28a745;
+}
+
+.custom-pagination .disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    cursor: not-allowed;
+}
+
+.custom-pagination .disabled:hover {
+    background-color: #e9ecef;
+}
+
+
+/* สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* ลดขนาดของ container ในหน้าจอเล็ก */
+        padding: 15px; /* ลด padding */
+    }
+
+    .card-img-top {
+        height: 120px; /* ลดความสูงของรูปภาพ */
+    }
+
+    .fixed-button {
+        top: 70px; /* ปรับตำแหน่งปุ่ม */
+        right: 10px;
+    }
+
+    .card {
+        margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างการ์ด */
+    }
+}
+
+/* สำหรับหน้าจอขนาดมือถือ */
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* ใช้ความกว้างเต็มหน้าจอ */
+        padding: 10px;
+    }
+
+    .card-img-top {
+        height: 100px; /* ลดความสูงของรูปภาพให้เหมาะสม */
+    }
+
+    .fixed-button {
+        top: 60px;
+        right: 5px;
+    }
+
+    .card-body {
+        padding: 10px; /* ลด padding ใน body ของการ์ด */
+    }
+}

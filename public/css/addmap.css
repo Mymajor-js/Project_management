@@ -1,0 +1,145 @@
+/* ใช้พื้นฐานทั่วไป */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/tex.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* การตั้งค่าคอนเทนเนอร์ */
+.content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* ขนาดสูงสุด */
+    min-width: 320px; /* ขนาดขั้นต่ำ (สำหรับมือถือ) */
+    text-align: left;
+}
+
+/* ตั้งค่าหัวข้อ */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* จัดการ label + input ให้เป็นระเบียบ */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 80px;
+    max-height: 150px;
+    resize: vertical;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+a {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media query สำหรับขนาดหน้าจอที่เล็กกว่า 768px (มือถือ) */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+        width: 90%; /* ขนาดที่ 90% ของหน้าจอ */
+    }
+
+    h2 {
+        font-size: 18px; /* ปรับขนาดตัวอักษรของ h2 */
+    }
+
+    button {
+        width: 100%; /* ทำให้ปุ่มเต็มความกว้าง */
+    }
+}
+
+/* Media query สำหรับหน้าจอที่เล็กกว่า 480px (มือถือขนาดเล็ก) */
+@media (max-width: 480px) {
+    .content {
+        padding: 15px;
+        width: 100%; /* ให้เนื้อหากว้างเต็มหน้าจอ */
+    }
+
+    h2 {
+        font-size: 16px; /* ลดขนาด font ของหัวข้อ */
+    }
+
+    button {
+        font-size: 14px; /* ลดขนาดฟอนต์ของปุ่ม */
+    }
+}
+
+/* Media query สำหรับขนาดหน้าจอใหญ่ขึ้น (บนจอ 1920x1080) */
+@media (min-width: 1200px) {
+    .content {
+        padding: 40px;
+        width: 60%; /* ทำให้คอนเทนเนอร์มีความกว้าง 60% ของหน้าจอ */
+    }
+
+    h2 {
+        font-size: 24px; /* ขยายขนาดตัวอักษรของ h2 */
+    }
+
+    button {
+        font-size: 18px; /* เพิ่มขนาดฟอนต์ของปุ่ม */
+    }
+}
